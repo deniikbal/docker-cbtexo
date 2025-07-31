@@ -3,7 +3,7 @@ networks:
 
 services:
   app:
-    image: itnsapurbalingga/exocbt:4.6.2-app
+    image: deniikbal/exocbt:4.6.2-app
     container_name: exocbt_app
     ports:
       - ${APP_EXPOSE}:${SERVER_PORT}
