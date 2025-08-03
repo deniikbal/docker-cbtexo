@@ -5,12 +5,15 @@ services:
   app:
     image: deniikbal/exocbt:4.6.2-app
     container_name: exocbt_app
+    environment:
+      - STORAGE_PATH=${STORAGE_PATH}
     ports:
       - ${APP_EXPOSE}:${SERVER_PORT}
     env_file:
       - .env
     volumes:
       - .env:/app/.env
+      - ./storage:/app/storage
     networks:
       - network
     depends_on:
